@@ -1,0 +1,18 @@
+<style type="text/css">
+  .column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+  <div class="row">
+      <div class="column"><app-movie-details></app-movie-details></div>
+      <div class="column"><app-list></app-list></div>
+  </div>

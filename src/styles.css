@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+.App {
+  text-align: center;
+}
+.selectedmovie { background:blue;cursor:pointer;}
+.notselectedmovie { background:none;}
