@@ -7,25 +7,30 @@ import { MovieService } from '../../movie.service';
 })
 export class ListComponent implements OnInit {
   movies:any;
+  selectedMovie:any;
   selMovie:any;
-  @Output() movieSelected = new EventEmitter();
+
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-     let posts =this.movieService.getMovies().subscribe(res => {
+    this.getMovieDetails();
+  }
+  getMovieDetails(){
+    let posts =this.movieService.getMovies().subscribe(res => {
        this.movies = res["Search"];
        this.selectMovie(res["Search"][0]);
-     });
-     this.movieService.movieSelected
-         .subscribe(
-           (movie) => {
-             this.selMovie = movie;
-           }
-    );
+    });
+    this.movieService.movieSelected
+        .subscribe(
+          (movie) => {
+            this.selMovie = movie;
+          }
+   );
   }
 
   selectMovie = (selectedMovie) => {
-    this.movieService.setSelectedMovie(selectedMovie)
+    this.selectedMovie = this.movieService.setSelectedMovie(selectedMovie)
   }
+
 
 }
