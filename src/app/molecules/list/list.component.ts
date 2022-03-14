@@ -1,14 +1,15 @@
 import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 import { MovieService } from '../../movie.service';
+import { Movie } from '../../movie';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
 })
 export class ListComponent implements OnInit {
-  movies:any;
+  movies:Movie;
   selectedMovie:any;
-  selMovie:any;
+  selMovie:Movie;
 
   constructor(private movieService: MovieService) { }
 
